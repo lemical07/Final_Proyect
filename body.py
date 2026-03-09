@@ -22,3 +22,18 @@ def product_list():
        return
    for i, p in enumerate(product, 1):
        print(f"\n{i}. {p['Name']}\nPrice: {p['Price']}\nQuantity: {p['Quantity']}")
+       
+def update_quantity():
+   product = load_data()
+   name = input("Name of the product to modify:_")
+   for p in product:
+       if p['Name'].lower() == name.lower():
+           try:
+               p['Quantity'] = int(input(f"New quantity for {p['Name']}: "))
+               save_data(product)
+               print("Updated quantity.")
+               return
+           except ValueError:
+               print("Error:( Invalid quantity.")
+               return
+   print("Product not found.")
