@@ -47,3 +47,8 @@ def delete_product():
        print(f"Product '{name}' removed.")
     else:
        print("Product not found.")
+       
+def calculate_total():
+   product = load_data()
+   total = sum(p['Price'] * p['Quantity'] for p in product)
+   print(f"\nTotal inventory value: {total}")
