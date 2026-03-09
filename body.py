@@ -37,3 +37,13 @@ def update_quantity():
                print("Error:( Invalid quantity.")
                return
    print("Product not found.")
+   
+   def delete_product():
+    product = load_data()
+    name = input("Product name to delete:_")
+    new_list= [p for p in product if p['Name'].lower() != name.lower()]
+    if len(new_list) < len(product):
+       save_data(new_list)
+       print(f"Product '{name}' removed.")
+    else:
+       print("Product not found.")
