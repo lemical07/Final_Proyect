@@ -38,7 +38,7 @@ def update_quantity():
                return
    print("Product not found.")
    
-   def delete_product():
+def delete_product():
     product = load_data()
     name = input("Product name to delete:_")
     new_list= [p for p in product if p['Name'].lower() != name.lower()]
