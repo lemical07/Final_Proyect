@@ -13,3 +13,12 @@ def add_product():
        print(f"Registered '{name}' product!!")
    except ValueError:
        print("Error:( Introduce only number in this section.")
+
+def product_list():
+   product = load_data()
+   print("\n---Product Inventory---")
+   if not product:
+       print("Inventory is empty.")
+       return
+   for i, p in enumerate(product, 1):
+       print(f"\n{i}. {p['Name']}\nPrice: {p['Price']}\nQuantity: {p['Quantity']}")
